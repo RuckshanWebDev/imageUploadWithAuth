@@ -21,7 +21,7 @@ const port = process.env.PORT || 5000
 // Middlewares
 
 app.use(cors({
-    origin: '*',
+    origin: process.env.NODE_ENV === "development" ? 'http://localhost:3000/' : process.env.FRONTEND_URL,
     credentials: true
 }))
 app.use(cookieParser())
