@@ -70,26 +70,4 @@ const getUserProfile = asyncHandler(async (req, res, next) => {
 
 })
 
-
-// User update profile
-// /api/user/auth
-// Public
-const updateUserProfile = asyncHandler(async (req, res, next) => {
-
-    res.status(200).json({ message: 'User update profile Route' })
-
-
-})
-
-// Admin
-// /api/user/admin
-// Private
-const adminControl = asyncHandler(async (req, res, next) => {
-
-    res.status(200).json({ message: 'admin' })
-
-
-})
-
-
-export { userAuth, registerUser, logoutUser, getUserProfile, updateUserProfile, adminControl }
+export { userAuth, registerUser, logoutUser, getUserProfile }

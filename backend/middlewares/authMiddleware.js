@@ -5,8 +5,6 @@ import User from '../models/userModel.js';
 
 const authProtect = expressAsyncHandler(async (req, res, next) => {
 
-    console.log(req.cookies.jwt);
-
     let token;
 
     token = req.cookies.jwt
@@ -44,16 +42,6 @@ const authProtect = expressAsyncHandler(async (req, res, next) => {
 
 })
 
-const adminProtect = (req, res, next) => {
 
-    if (req.user && req.user.isAdmin) {
-        next()
-    } else {
-        res.status(401);
-        throw new Error('Not authorized, Only for admin');
-    }
-}
-
-
-export { authProtect, adminProtect }
+export { authProtect }
 
