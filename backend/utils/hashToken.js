@@ -7,6 +7,7 @@ const hashToken = (res, userId) => {
     });
 
     res.cookie('jwt', token, {
+        domain: process.env.FRONTEND_URL,
         httpOnly: true,
         secure: true, // Use secure cookies in production
         sameSite: 'lax', // Prevent CSRF attacks
