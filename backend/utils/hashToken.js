@@ -8,9 +8,9 @@ const hashToken = (res, userId) => {
 
     res.cookie('jwt', token, {
         // domain: process.env.FRONTEND_URL,
-        httpOnly: true,
+        httpOnly: false,
         secure: false, // Use secure cookies in production
-        sameSite: 'none', // Prevent CSRF attacks
+        sameSite: 'lax', // Prevent CSRF attacks
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
     });
 
